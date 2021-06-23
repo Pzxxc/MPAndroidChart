@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.pzxxc:MPAndroidChart:v3.1.1'
+    implementation 'com.github.pzxxc:MPAndroidChart:v3.1.3'
 }
 ```
 
