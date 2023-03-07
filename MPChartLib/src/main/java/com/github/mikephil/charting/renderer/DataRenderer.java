@@ -149,7 +149,15 @@ public abstract class DataRenderer extends Renderer {
      */
     public void drawValue(Canvas c, IValueFormatter formatter, float value, Entry entry, int dataSetIndex, float x, float y, int color) {
         mValuePaint.setColor(color);
-        c.drawText(formatter.getFormattedValue(value, entry, dataSetIndex, mViewPortHandler), x, y, mValuePaint);
+
+        String text = formatter.getFormattedValue(value, entry, dataSetIndex, mViewPortHandler);
+        String[] strings = text.split("\n");
+        Paint.FontMetrics fm = mValuePaint.getFontMetrics();
+        float offsetY = fm.descent - fm.ascent;
+        for (String s : strings) {
+            c.drawText(s , x, y, mValuePaint);
+            y += offsetY;
+        }
     }
 
     /**
