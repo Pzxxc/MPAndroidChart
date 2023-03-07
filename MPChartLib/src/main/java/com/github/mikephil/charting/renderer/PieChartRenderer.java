@@ -33,7 +33,7 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class PieChartRenderer extends DataRenderer {
+public class PieChartRenderer extends MyDataRenderer {
 
     protected PieChart mChart;
 
@@ -582,15 +582,7 @@ public class PieChartRenderer extends DataRenderer {
 
                     // draw everything, depending on settings
                     if (drawXOutside && drawYOutside) {
-
-                        drawValue(c,
-                                formatter,
-                                value,
-                                entry,
-                                0,
-                                labelPtx,
-                                labelPty,
-                                dataSet.getValueTextColor(j));
+                        drawValue(c, formatter, value, entry, 0, labelPtx, labelPty, dataSet.getValueTextColor(j));
 
                         if (j < data.getEntryCount() && entryLabel != null) {
                             drawEntryLabel(c, entryLabel, labelPtx, labelPty + lineHeight);
@@ -601,9 +593,7 @@ public class PieChartRenderer extends DataRenderer {
                             drawEntryLabel(c, entryLabel, labelPtx, labelPty + lineHeight / 2.f);
                         }
                     } else if (drawYOutside) {
-
-                        drawValue(c, formatter, value, entry, 0, labelPtx, labelPty + lineHeight / 2.f, dataSet
-                                .getValueTextColor(j));
+                        drawValue(c, formatter, value, entry, 0, labelPtx, labelPty + lineHeight / 2.f, dataSet.getValueTextColor(j));
                     }
                 }
 
@@ -628,7 +618,6 @@ public class PieChartRenderer extends DataRenderer {
                             drawEntryLabel(c, entryLabel, x, y + lineHeight / 2f);
                         }
                     } else if (drawYInside) {
-
                         drawValue(c, formatter, value, entry, 0, x, y + lineHeight / 2f, dataSet.getValueTextColor(j));
                     }
                 }

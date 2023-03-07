@@ -135,14 +135,7 @@ public class ScatterChartRenderer extends LineScatterCandleRadarRenderer {
                     Entry entry = dataSet.getEntryForIndex(j / 2 + mXBounds.min);
 
                     if (dataSet.isDrawValuesEnabled()) {
-                        drawValue(c,
-                                dataSet.getValueFormatter(),
-                                entry.getY(),
-                                entry,
-                                i,
-                                positions[j],
-                                positions[j + 1] - shapeSize,
-                                dataSet.getValueTextColor(j / 2 + mXBounds.min));
+                        drawValue(c, dataSet.getValueFormatter(), entry.getY(), entry, i, positions[j], positions[j + 1] - shapeSize, dataSet.getValueTextColor(j / 2 + mXBounds.min));
                     }
 
                     if (entry.getIcon() != null && dataSet.isDrawIconsEnabled()) {
